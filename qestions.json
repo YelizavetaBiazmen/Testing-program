@@ -1,0 +1,22 @@
+[
+	{
+		"qestion":"What colour is the sun?",
+		"answers":[
+			"white",
+			"yellow",
+			"green",
+			"black"
+		],
+		"correctAnswer": 1
+	},
+	{
+		"qestion":"",
+		"answers":[
+			"",
+			"",
+			"",
+			""
+		],
+		"correctAnswer": 1
+	}
+]	
