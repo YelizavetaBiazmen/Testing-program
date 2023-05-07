@@ -7,16 +7,17 @@ import json #importujemy bibliotekę
 with open('data/qestions.json') as file: #lączymy programę z pytaniami json
     qstns = json.load(file)
 random.shuffle(qstns) #przetasujemy pytania w tablicy
-qstnsQty = 0 #deklarujemy zmienną, która mówi o ilości zadanych pytań
-correctAns = 0 #deklarujemy zmienną, która mówi o ilości prawidłowych odpowiedzi
-wrongAns = 0 #deklarujemy zmienną, która mówi o ilości nieprawidłowych odpowiedzi
-counter = 0 #deklarujemy zmienną, zmienia ilość wszystkich pytań
+#deklarujemy zmienne
+qstnsQty = 0 #mówi o ilości zadanych pytań
+correctAns = 0 #mówi o ilości prawidłowych odpowiedzi
+wrongAns = 0 #mówi o ilości nieprawidłowych odpowiedzi
+counter = 0 #zmienia ilość wszystkich pytań
 for element in qstns:
     counter += 1 
     print(Fore.YELLOW + 'Question:', element['qestion'], Style.RESET_ALL + ' ' ) #kolorujemy tekst
     print( 'Please, choose the correct answer.')
     a = 0
-    correctAnsversString = element['answers'][element['correctAnswer'] - 1]
+    correctAnsversString = element['answers'][element['correctAnswer'] - 1] #odzyskujemy i wpisujemy do zmiennej poprawną odpowiedz z tablicy, odejmując 1, ponieważ numeracja w tablicy zaczyna się od 0
     qstnsQty += 1 #dodajemy pytanie 
     random.shuffle(element['answers']) #przetasujemy odpowiedzi w tablicy
     for answer in element['answers']:
