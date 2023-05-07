@@ -1,16 +1,16 @@
-import time
-import random 
-from colorama import init
+import time #importujemy bibliotekę
+import random #importujemy bibliotekę
+from colorama import init #importujemy podrozdział biblioteki
 init()
-from colorama import Fore, Back, Style
-import json
-with open('data/qestions.json') as file:
+from colorama import Fore, Back, Style #importujemy podrozdziały biblioteki
+import json #importujemy bibliotekę
+with open('data/qestions.json') as file: #lączymy programę z pytaniami json
     qstns = json.load(file)
-random.shuffle(qstns)
-qstnsQty = 0
-correctAns = 0
-wrongAns = 0 
-counter = 0
+random.shuffle(qstns) #przetasujemy pytania w tablicy
+qstnsQty = 0 #deklarujemy zmienną, która mówi o ilości zadanych pytań
+correctAns = 0 #deklarujemy zmienną, która mówi o ilości prawidłowych odpowiedzi
+wrongAns = 0 #deklarujemy zmienną, która mówi o ilości nieprawidłowych odpowiedzi
+counter = 0 #deklarujemy zmienną, zmienia ilość wszystkich pytań
 for element in qstns:
     counter += 1
     print(Fore.YELLOW + 'Question:', element['qestion'], Style.RESET_ALL + ' ' )
@@ -34,9 +34,9 @@ for element in qstns:
     else:
         print(Fore.RED + 'No.' , Style.RESET_ALL + 'the correct answer is', correctAnsversString)
         wrongAns += 1
-    if counter == 30:
+    if counter == 30: #ustaliamy po jakiej ilości zadanych pytań pokażą się wyniki
         break
-pers = (correctAns / qstnsQty) * 100    
+pers = (correctAns / qstnsQty) * 100  #procent poprawnych odpowiedzi  
 print('quantity of answers ',qstnsQty)
 print('quantity of correct answers ',correctAns)
 print('quantity of wrong answers ',wrongAns)
